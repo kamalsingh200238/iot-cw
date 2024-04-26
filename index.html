@@ -1,127 +1,110 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <!-- <link rel="icon" type="image/svg+xml" href="/vite.svg" /> -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>website</title>
-    <script type="module" defer src="/src/main.js"></script>
-  </head>
 
-  <body>
-    <main class="bg-yellow-100">
-      <!-- Main header: contains links, cart and login button -->
-      <header class="font-bold text-yellow-200 shadow-md bg-sky-950">
-        <div class="flex justify-between items-center py-5 mx-auto max-w-7xl">
-          <!-- Logo for the header -->
-          <div>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="3"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              class="lucide lucide-paw-print"
-            >
-              <circle cx="11" cy="4" r="2" />
-              <circle cx="18" cy="8" r="2" />
-              <circle cx="20" cy="16" r="2" />
-              <path
-                d="M9 10a5 5 0 0 1 5 5v3.5a3.5 3.5 0 0 1-6.84 1.045Q6.52 17.48 4.46 16.84A3.5 3.5 0 0 1 5.5 10Z"
-              />
-            </svg>
-          </div>
+<head>
+  <meta charset="UTF-8" />
+  <!-- <link rel="icon" type="image/svg+xml" href="/vite.svg" /> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>website</title>
+  <script type="module" defer src="/src/main.js"></script>
+</head>
 
-          <!-- Navbar links to different page -->
-          <nav>
-            <ul class="flex gap-10 justify-between">
-              <li><a href="#">Store</a></li>
-              <li><a href="#">About us</a></li>
-              <li><a href="#">Blog</a></li>
-            </ul>
-          </nav>
-
-          <div class="flex gap-10 justify-between items-center">
-            <!-- Cart button -->
-            <div>
-              <button class="py-2 px-2 rounded-md border-yellow-100 border-3">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="lucide lucide-shopping-cart"
-                >
-                  <circle cx="8" cy="21" r="1" />
-                  <circle cx="19" cy="21" r="1" />
-                  <path
-                    d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"
-                  />
-                </svg>
-              </button>
-            </div>
-            <!-- Login button -->
-            <div>
-              <button class="py-2 px-5 rounded-md border-yellow-100 border-3">
-                Login
-              </button>
-            </div>
-          </div>
+<body>
+  <main>
+    <!-- Main header: contains links, cart and login button -->
+    <header class="font-bold text-white shadow-md bg-sky-950">
+      <div class="flex justify-between items-center py-5 mx-auto max-w-7xl">
+        <!-- Logo for the header -->
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"
+            class="lucide lucide-paw-print">
+            <circle cx="11" cy="4" r="2" />
+            <circle cx="18" cy="8" r="2" />
+            <circle cx="20" cy="16" r="2" />
+            <path d="M9 10a5 5 0 0 1 5 5v3.5a3.5 3.5 0 0 1-6.84 1.045Q6.52 17.48 4.46 16.84A3.5 3.5 0 0 1 5.5 10Z" />
+          </svg>
         </div>
-      </header>
 
-      <!-- Hero section -->
-      <section
-        class="grid grid-cols-2 py-16 px-8 mx-auto max-w-7xl text-sky-950"
-      >
-        <div class="self-center">
-          <div class="text-5xl font-bold">
-            <h1 class="mb-10">
-              Paws-itively<br />
-              the Best Pet Supplies in Town
-            </h1>
-          </div>
-          <div class="mb-10">
-            <p>
-              At <span>Pawsome</span>, we're dedicated to providing the highest
-              quality products for your beloved pets. Step into our world of
-              top-notch supplies, trusted brands, and unbeatable convenience.
-              Whether you're stocking up on nutritious food, cozy beds, or
-              stimulating toys, we have everything you need to pamper your furry
-              companion.
-            </p>
-          </div>
+        <!-- Navbar links to different page -->
+        <nav>
+          <ul class="flex gap-10 justify-between">
+            <li><a href="#">Store</a></li>
+            <li><a href="#">About us</a></li>
+            <li><a href="#">Blog</a></li>
+          </ul>
+        </nav>
+
+        <div class="flex gap-10 justify-between items-center">
+          <!-- Cart button -->
           <div>
-            <button
-              class="py-2 px-5 mr-5 font-bold text-white rounded-md border-3 border-sky-950 bg-sky-950"
-            >
-              Shop now
+            <button class="py-2 px-2 rounded-md border-white border-3">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-shopping-cart fill-white">
+                <circle cx="8" cy="21" r="1" />
+                <circle cx="19" cy="21" r="1" />
+                <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" />
+              </svg>
             </button>
-            <button
-              class="py-2 px-5 font-bold rounded-md border-3 text-sky-950 border-sky-950"
-            >
-              Read blog
+          </div>
+          <!-- Login button -->
+          <div>
+            <button class="py-2 px-5 rounded-md border-white border-3">
+              Login
             </button>
           </div>
         </div>
-        <!-- hero section image-->
-        <div class="justify-self-end self-center max-w-md">
-          <img
-            src="groodle-on-pillow.jpg"
-            alt="Groodle sitting on a pillow"
-            class="rounded-md"
-          />
+      </div>
+    </header>
+
+    <!-- Hero section -->
+    <section class="grid grid-cols-2 py-16 px-8 mx-auto max-w-7xl text-sky-950">
+      <div class="self-center">
+        <div class="text-5xl font-bold">
+          <h1 class="mb-10">
+            Paws-itively<br />
+            the Best Pet Supplies in Town
+          </h1>
         </div>
-      </section>
-    </main>
-  </body>
+        <div class="mb-10">
+          <p>
+            At <span>Pawsome</span>, we're dedicated to providing the highest
+            quality products for your beloved pets. Step into our world of
+            top-notch supplies, trusted brands, and unbeatable convenience.
+            Whether you're stocking up on nutritious food, cozy beds, or
+            stimulating toys, we have everything you need to pamper your furry
+            companion.
+          </p>
+        </div>
+        <div>
+          <button class="py-2 px-5 mr-5 font-bold text-white rounded-md border-3 border-sky-950 bg-sky-950">
+            Shop now
+          </button>
+          <button class="py-2 px-5 font-bold rounded-md border-3 text-sky-950 border-sky-950">
+            Read blog
+          </button>
+        </div>
+      </div>
+      <!-- hero section image-->
+      <div class="justify-self-end self-center max-w-md">
+        <img src="groodle-on-pillow.jpg" alt="Groodle sitting on a pillow" class="rounded-md" />
+      </div>
+    </section>
+
+    <!-- second section describing their achievements-->
+    <section class="relative px-8 py-28 mx-auto max-w-7xl bg-yellow-100">
+      <div class="">
+        <img src="golden-retriever-wo-background.png" alt="A golden retriever"
+          class="w-80 absolute inline-block mr-20 left-0 -bottom-10">
+        <div class="inline-flex justify-between items-center ml-96 gap-8">
+          <p><span>120 K</span> Nutritional Complete</p>
+          <p><span>24 +</span> Product sale</p>
+          <p><span>90 %</span> Client satisfaction</p>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+
 </html>
