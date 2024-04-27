@@ -1,15 +1,12 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: [
-    "./index.html",
-    "./src/**/*.{js,ts,html}",
-  ],
+  content: ["./index.html", "./*.html", "./src/**/*.{js,ts,html}"],
   theme: {
     extend: {
       borderWidth: {
-        "3": "3px",
-      }
+        3: "3px",
+      },
     },
   },
-  plugins: [],
-}
+  plugins: [require("@tailwindcss/forms")],
+};
