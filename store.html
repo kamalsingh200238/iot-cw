@@ -64,7 +64,7 @@
         <div class="flex gap-10 justify-between items-center">
           <!-- Cart button -->
           <div>
-            <button class="py-2 px-2 rounded-md border-white border-3">
+            <button class="py-2 px-2 rounded-md relative border-white border-3">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -83,6 +83,11 @@
                   d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"
                 />
               </svg>
+              <span
+                id="cart-quantity"
+                class="absolute right-0 top-0 translate-x-1/2 -translate-y-1/2 px-2 py-2 inline-block bg-yellow-100 rounded-full text-sky-950"
+                >0</span
+              >
             </button>
           </div>
           <!-- Login button -->
@@ -98,13 +103,22 @@
       </div>
     </header>
     <section class="max-w-7xl mx-auto px-8">
-      <div class="grid place-items-center pt-16">
-        <input
-          type="search"
-          placeholder="Search for products...."
-          class="max-w-xl rounded-md border-gray-300"
-        />
-      </div>
+      <form action="store.php" method="get">
+        <div class="flex justify-center gap-5 pt-16">
+          <input
+            type="search"
+            placeholder="Search for products...."
+            name="query"
+            class="max-w-xl rounded-md border-gray-300"
+          />
+          <button
+            type="submit"
+            class="py-2 px-5 mr-5 font-bold text-white rounded-md border-3 border-sky-950 bg-sky-950 hover:bg-sky-800 transition-all"
+          >
+            Search
+          </button>
+        </div>
+      </form>
     </section>
     <section class="max-w-7xl mx-auto px-8">
       <div class="py-16 px-8 mx-auto max-w-7xl">
@@ -127,7 +141,7 @@
               <p class="flex gap-5 justify-between items-center">
                 <span>&pound; 8.99</span>
                 <span class="text-sky-950 inline-flex gap-2 items-center">
-                  <button>
+                  <button onclick="addItemToCart(1)">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="32"
@@ -145,172 +159,8 @@
                       <path d="M12 8v8" class="stroke-yellow-100" />
                     </svg>
                   </button>
-                  <button>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="32"
-                      height="32"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      class="lucide lucide-circle-minus"
-                    >
-                      <circle cx="12" cy="12" r="10" />
-                      <path d="M8 12h8" />
-                    </svg>
-                  </button>
-                </span>
-              </p>
-            </div>
-          </div>
-          <div
-            class="flex flex-col gap-5 items-stretch p-5 bg-yellow-100 rounded-lg"
-          >
-            <!-- Card image -->
-            <img
-              src="https://cdn.wallpapersafari.com/45/36/E1gFSV.jpg"
-              alt="white image"
-              class="object-cover w-60 rounded-md aspect-square"
-            />
-
-            <!-- Card info -->
-            <div class="px-2">
-              <p class="mb-5 text-center">Peanut Butter Crunchies</p>
-              <p class="flex gap-5 justify-between items-center">
-                <span>&pound; 8.99</span>
-                <span class="text-sky-950 inline-flex gap-2 items-center">
-                  <button>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="32"
-                      height="32"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      class="lucide lucide-circle-plus fill-sky-950"
-                    >
-                      <circle cx="12" cy="12" r="10" />
-                      <path d="M8 12h8" class="stroke-yellow-100" />
-                      <path d="M12 8v8" class="stroke-yellow-100" />
-                    </svg>
-                  </button>
-                  <button>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="32"
-                      height="32"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      class="lucide lucide-circle-minus"
-                    >
-                      <circle cx="12" cy="12" r="10" />
-                      <path d="M8 12h8" />
-                    </svg>
-                  </button>
-                </span>
-              </p>
-            </div>
-          </div>
-          <div
-            class="flex flex-col gap-5 items-stretch p-5 bg-yellow-100 rounded-lg"
-          >
-            <!-- Card image -->
-            <img
-              src="https://cdn.wallpapersafari.com/45/36/E1gFSV.jpg"
-              alt="white image"
-              class="object-cover w-60 rounded-md aspect-square"
-            />
-
-            <!-- Card info -->
-            <div class="px-2">
-              <p class="mb-5 text-center">Peanut Butter Crunchies</p>
-              <p class="flex gap-5 justify-between items-center">
-                <span>&pound; 8.99</span>
-                <span class="text-sky-950 inline-flex gap-2 items-center">
-                  <button>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="32"
-                      height="32"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      class="lucide lucide-circle-plus fill-sky-950"
-                    >
-                      <circle cx="12" cy="12" r="10" />
-                      <path d="M8 12h8" class="stroke-yellow-100" />
-                      <path d="M12 8v8" class="stroke-yellow-100" />
-                    </svg>
-                  </button>
-                  <button>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="32"
-                      height="32"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      class="lucide lucide-circle-minus"
-                    >
-                      <circle cx="12" cy="12" r="10" />
-                      <path d="M8 12h8" />
-                    </svg>
-                  </button>
-                </span>
-              </p>
-            </div>
-          </div>
-          <div
-            class="flex flex-col gap-5 items-stretch p-5 bg-yellow-100 rounded-lg"
-          >
-            <!-- Card image -->
-            <img
-              src="https://cdn.wallpapersafari.com/45/36/E1gFSV.jpg"
-              alt="white image"
-              class="object-cover w-60 rounded-md aspect-square"
-            />
-
-            <!-- Card info -->
-            <div class="px-2">
-              <p class="mb-5 text-center">Peanut Butter Crunchies</p>
-              <p class="flex gap-5 justify-between items-center">
-                <span>&pound; 8.99</span>
-                <span class="text-sky-950 inline-flex gap-2 items-center">
-                  <button>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="32"
-                      height="32"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      class="lucide lucide-circle-plus fill-sky-950"
-                    >
-                      <circle cx="12" cy="12" r="10" />
-                      <path d="M8 12h8" class="stroke-yellow-100" />
-                      <path d="M12 8v8" class="stroke-yellow-100" />
-                    </svg>
-                  </button>
-                  <button>
+                  <span id="1-quantity">0</span>
+                  <button onclick="removeItemFromCart(1)">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="32"
@@ -340,5 +190,98 @@
         <p>For any queries contact us on: +44-7777777777</p>
       </div>
     </footer>
+    <script>
+      // Function to update the cart on page load
+      function updateCartOnLoad() {
+        // Read cart items from local storage
+        const cartItems = getCartItems();
+
+        // Update displayed quantities for each product
+        cartItems.forEach((item) => {
+          const quantitySpan = document.getElementById(`${item.id}-quantity`);
+          if (quantitySpan) {
+            quantitySpan.textContent = item.quantity;
+            if (item.quantity === 10) {
+              // If quantity reaches 10, display a message indicating the limit
+              document.getElementById("cart-text").textContent = "Cart (Max)";
+            }
+          }
+        });
+
+        // Update the cart count
+        updateCartCount();
+      }
+      updateCartOnLoad();
+
+      // Function to retrieve cart items from local storage
+      function getCartItems() {
+        return JSON.parse(localStorage.getItem("cart")) || [];
+      }
+
+      // Function to save cart items to local storage
+      function saveCartItems(cart) {
+        localStorage.setItem("cart", JSON.stringify(cart));
+      }
+
+      // Function to add item to cart
+      function addItemToCart(id) {
+        const cartItems = getCartItems();
+        const existingItemIndex = cartItems.findIndex((item) => item.id === id);
+        if (existingItemIndex !== -1) {
+          // If item already exists, update its quantity if less than 10
+          if (cartItems[existingItemIndex].quantity < 10) {
+            cartItems[existingItemIndex].quantity += 1;
+          }
+        } else {
+          // If item does not exist, add it to the cart
+          cartItems.push({ id: id, quantity: 1 });
+        }
+        saveCartItems(cartItems);
+        updateDisplayedQuantity(id);
+        updateCartCount();
+      }
+
+      // Function to remove item from cart
+      function removeItemFromCart(id) {
+        const cartItems = getCartItems();
+        const existingItemIndex = cartItems.findIndex((item) => item.id === id);
+        if (existingItemIndex !== -1) {
+          // If item exists, decrease its quantity
+          cartItems[existingItemIndex].quantity -= 1;
+          if (cartItems[existingItemIndex].quantity === 0) {
+            // If quantity becomes 0, remove the item from the cart
+            cartItems.splice(existingItemIndex, 1);
+          }
+          saveCartItems(cartItems);
+          updateDisplayedQuantity(id);
+          updateCartCount();
+        }
+
+        console.log(cartItems);
+      }
+
+      // Function to update the displayed quantity on the page
+      function updateDisplayedQuantity(id) {
+        const quantitySpan = document.getElementById(`${id}-quantity`);
+        const cartItems = getCartItems();
+        const cartItem = cartItems.find((item) => item.id === id);
+        if (cartItem) {
+          quantitySpan.textContent = cartItem.quantity;
+        } else {
+          quantitySpan.textContent = 0;
+        }
+      }
+
+      // Function to update the cart count
+      function updateCartCount() {
+        const cartItems = getCartItems();
+        let totalCount = 0;
+        cartItems.forEach((item) => {
+          totalCount += item.quantity;
+        });
+        document.getElementById("cart-quantity").textContent =
+          `(${totalCount})`;
+      }
+    </script>
   </body>
 </html>
