@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pawsome</title>
     <link rel="stylesheet" href="main.css" />
+    <script src="./cart-logic.js" defer></script>
   </head>
 
   <body>
@@ -47,7 +48,7 @@
               </li>
               <li>
                 <a
-                  href="./store.html"
+                  href="./store.php"
                   class="hover:text-yellow-200 transition-all"
                   >Store</a
                 >
@@ -72,7 +73,9 @@
           <div class="flex gap-10 justify-between items-center">
             <!-- Cart button -->
             <div>
-              <button class="py-2 px-2 rounded-md border-white border-3">
+              <button
+                class="py-2 px-2 rounded-md relative border-white border-3"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -91,6 +94,12 @@
                     d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"
                   />
                 </svg>
+                <span
+                  id="cart-quantity"
+                  class="absolute right-0 top-0 translate-x-1/2 -translate-y-1/2 px-2 py-2 inline-block bg-yellow-100 rounded-full text-sky-950"
+                >
+                  0
+                </span>
               </button>
             </div>
             <!-- Login button -->
@@ -211,7 +220,7 @@
                 <p class="flex gap-5 justify-between items-center">
                   <span>&pound; 8.99</span>
                   <span class="text-sky-950 inline-flex gap-2 items-center">
-                    <button>
+                    <button onclick="addItemToCart(1)">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="32"
@@ -229,7 +238,8 @@
                         <path d="M12 8v8" class="stroke-yellow-100" />
                       </svg>
                     </button>
-                    <button>
+                    <span id="1-quantity">0</span>
+                    <button onclick="removeItemFromCart(1)">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="32"
@@ -266,7 +276,7 @@
                 <p class="flex gap-5 justify-between items-center">
                   <span>&pound; 8.99</span>
                   <span class="text-sky-950 inline-flex gap-2 items-center">
-                    <button>
+                    <button onclick="addItemToCart(2)">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="32"
@@ -284,7 +294,8 @@
                         <path d="M12 8v8" class="stroke-yellow-100" />
                       </svg>
                     </button>
-                    <button>
+                    <span id="2-quantity">0</span>
+                    <button onclick="removeItemFromCart(2)">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="32"
@@ -321,7 +332,7 @@
                 <p class="flex gap-5 justify-between items-center">
                   <span>&pound; 8.99</span>
                   <span class="text-sky-950 inline-flex gap-2 items-center">
-                    <button>
+                    <button onclick="addItemToCart(3)">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="32"
@@ -339,7 +350,8 @@
                         <path d="M12 8v8" class="stroke-yellow-100" />
                       </svg>
                     </button>
-                    <button>
+                    <span id="3-quantity">0</span>
+                    <button onclick="removeItemFromCart(3)">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="32"
@@ -376,7 +388,7 @@
                 <p class="flex gap-5 justify-between items-center">
                   <span>&pound; 8.99</span>
                   <span class="text-sky-950 inline-flex gap-2 items-center">
-                    <button>
+                    <button onclick="addItemToCart(4)">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="32"
@@ -394,7 +406,8 @@
                         <path d="M12 8v8" class="stroke-yellow-100" />
                       </svg>
                     </button>
-                    <button>
+                    <span id="4-quantity">0</span>
+                    <button onclick="removeItemFromCart(4)">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="32"
