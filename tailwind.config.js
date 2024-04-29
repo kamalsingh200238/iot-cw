@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ["./*.{js,html}"],
+  content: ["./*.{js,html,php}"],
   theme: {
     extend: {
       borderWidth: {

@@ -7,13 +7,13 @@ $database = "pawsome";
 
 $conn = new mysqli($servername, $dbUsername, $dbPassword, $database);
 
-if($conn -> connect_error) {
-    die("Connection failed: ". $conn->connect_error);
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
 }
 
 $errorMessage = "";
 
-if($_SERVER["REQUEST_METHOD"] == "POST") {
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = trim($_POST["username"]);
     $password = trim($_POST["password"]);
 
@@ -29,7 +29,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             $errorMessage = "Username already exists.";
         } else {
             $hashed_password = password_hash($password, PASSWORD_DEFAULT);
-            $stmt = $conn->prepare("INSERT INTO users (username, password) VALUES (?, ?)");
+            $stmt = $conn->prepare(
+                "INSERT INTO users (username, password) VALUES (?, ?)"
+            );
             $stmt->bind_param("ss", $username, $hashed_password);
 
             if ($stmt->execute()) {
@@ -44,9 +46,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 
-$conn -> close();
-
+$conn->close();
 ?>
+
 <!doctype html>
 <html lang="en">
 
@@ -58,14 +60,14 @@ $conn -> close();
 </head>
 
 <body>
- <main class="">
+  <main class="">
     <div class="grid grid-cols-2 place-items-center">
       <img src="./images/dog-sitting.jpg" alt="dog sitting" class="w-full max-h-screen object-cover object-bottom" />
       <form action="signup.php" method="post">
         <div class="w-full px-10 flex flex-col items-center">
           <h1 class="mb-8 text-3xl font-bold text-sky-950">Signup</h1>
           <?php if (!empty($errorMessage)): ?>
-            <div class="mb-5 text-red-500"><?php echo $errorMessage; ?></div>
+            <div class="mb-5 px-5 py-3 rounded-md bg-rose-100 text-red-950"><?php echo $errorMessage; ?></div>
           <?php endif; ?>
           <div class="flex flex-col gap-1 mb-10">
             <label for="username">Username</label>
