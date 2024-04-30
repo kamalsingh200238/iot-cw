@@ -88,3 +88,24 @@ function updateCartCount() {
   });
   document.getElementById("cart-quantity").textContent = `(${totalCount})`;
 }
+
+// Get the button element
+const cartButton = document.getElementById("cart-button");
+
+// Add click event listener to the button
+cartButton.addEventListener("click", () => {
+  // Retrieve data from Local Storage
+  const cartData = localStorage.getItem("cart");
+
+  // Check if cartData exists in Local Storage
+  if (cartData) {
+    // Construct the URL with cartData as a query parameter
+    const url = "cart.php?data=" + encodeURIComponent(cartData);
+
+    // Redirect the user to the cart page with the data in the URL
+    window.location.href = url;
+  } else {
+    // Handle the case where cartData does not exist in Local Storage
+    alert("No data in cart.");
+  }
+});
