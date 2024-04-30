@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Pawsome | blog</title>
     <link rel="stylesheet" href="./main.css" />
+    <script src="./cart-logic.js" defer></script>
   </head>
 
   <body>
@@ -40,9 +41,7 @@
               <a class="hover:text-yellow-200 transition-all" href="/">Home</a>
             </li>
             <li>
-              <a
-                href="./store.html"
-                class="hover:text-yellow-200 transition-all"
+              <a href="./store.php" class="hover:text-yellow-200 transition-all"
                 >Store</a
               >
             </li>
@@ -66,7 +65,10 @@
         <div class="flex gap-10 justify-between items-center">
           <!-- Cart button -->
           <div>
-            <button class="py-2 px-2 rounded-md border-white border-3">
+            <button
+              id="cart-button"
+              class="py-2 px-2 rounded-md relative border-white border-3"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -85,6 +87,12 @@
                   d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"
                 />
               </svg>
+              <span
+                id="cart-quantity"
+                class="absolute right-0 top-0 translate-x-1/2 -translate-y-1/2 px-2 py-2 inline-block bg-yellow-100 rounded-full text-sky-950"
+              >
+                0
+              </span>
             </button>
           </div>
           <!-- Login button -->
