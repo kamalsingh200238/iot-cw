@@ -99,7 +99,7 @@ $result = $stmt->get_result();
         <div class="flex gap-10 justify-between items-center">
             <!-- Cart button -->
             <div>
-                <button class="py-2 px-2 rounded-md relative border-white border-3">
+                <button id="cart-button" class="py-2 px-2 rounded-md relative border-white border-3">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"

@@ -8,10 +8,10 @@ function updateCartOnLoad() {
     const quantitySpan = document.getElementById(`${item.id}-quantity`);
     if (quantitySpan) {
       quantitySpan.textContent = item.quantity;
-      if (item.quantity === 10) {
-        // If quantity reaches 10, display a message indicating the limit
-        document.getElementById("cart-text").textContent = "Cart (Max)";
-      }
+      // if (item.quantity === 10) {
+      //   // If quantity reaches 10, display a message indicating the limit
+      //   document.getElementById("cart-text").textContent = "Cart (Max)";
+      // }
     }
   });
 
@@ -38,6 +38,10 @@ function addItemToCart(id) {
     // If item already exists, update its quantity if less than 10
     if (cartItems[existingItemIndex].quantity < 10) {
       cartItems[existingItemIndex].quantity += 1;
+    } else {
+      alert(
+        "Sorry, you can't add more than 10 units of a single product to your cart."
+      );
     }
   } else {
     // If item does not exist, add it to the cart
