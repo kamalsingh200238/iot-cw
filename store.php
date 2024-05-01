@@ -1,9 +1,16 @@
 <?php
+
+session_start(); // Start the session to access session variables
+
 // Database connection parameters
 $servername = "127.0.0.1";
 $dbUsername = "root";
 $dbPassword = "";
 $database = "pawsome";
+
+if ($_SESSION["loggedin"] === true) {
+    $username = $_SESSION['username'];
+}
 
 // Create connection
 $conn = new mysqli($servername, $dbUsername, $dbPassword, $database);
@@ -67,10 +74,10 @@ $result = $stmt->get_result();
                         <a href="#" class="border-b border-white hover:text-yellow-200 transition-all">Store</a>
                     </li>
                     <li>
-                        <a href="about.html" class="hover:text-yellow-200 transition-all">About us</a>
+                        <a href="about.php" class="hover:text-yellow-200 transition-all">About us</a>
                     </li>
                     <li>
-                        <a href="blog.html" class="hover:text-yellow-200 transition-all">Blog</a>
+                        <a href="blog.php" class="hover:text-yellow-200 transition-all">Blog</a>
                     </li>
                 </ul>
             </nav>
@@ -90,9 +97,13 @@ $result = $stmt->get_result();
                 </div>
                 <!-- Login button -->
                 <div>
-                    <a href="login.php" class="py-2 px-5 rounded-md border-white border-3">
-                        Login
-                    </a>
+                    <?php if (isset($_SESSION['username'])) : ?>
+                        <span class="py-2 px-5 rounded-md border-white border-3">Hi <?php echo $username; ?></span>
+                    <?php else : ?>
+                        <a href="login.php" class="py-2 px-5 rounded-md border-white border-3">
+                            Login
+                        </a>
+                    <?php endif; ?>
                 </div>
             </div>
         </div>

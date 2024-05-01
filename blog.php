@@ -1,0 +1,167 @@
+<?php
+session_start(); // Start the session to access session variables
+
+if ($_SESSION["loggedin"] === true) {
+  $username = $_SESSION['username'];
+}
+?>
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pawsome | blog</title>
+  <link rel="stylesheet" href="main.css" />
+  <script defer src="cart-logic.js"></script>
+</head>
+
+<body>
+  <header class="font-bold text-white shadow-md bg-sky-950">
+    <div class="flex justify-between items-center py-5 mx-auto max-w-7xl">
+      <!-- Logo for the header -->
+      <div>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-paw-print">
+          <circle cx="11" cy="4" r="2" />
+          <circle cx="18" cy="8" r="2" />
+          <circle cx="20" cy="16" r="2" />
+          <path d="M9 10a5 5 0 0 1 5 5v3.5a3.5 3.5 0 0 1-6.84 1.045Q6.52 17.48 4.46 16.84A3.5 3.5 0 0 1 5.5 10Z" />
+        </svg>
+      </div>
+
+      <!-- Navbar links to different page -->
+      <nav>
+        <ul class="flex gap-10 justify-between">
+          <li>
+            <a class="hover:text-yellow-200 transition-all" href="/">Home</a>
+          </li>
+          <li>
+            <a href="store.php" class="hover:text-yellow-200 transition-all">Store</a>
+          </li>
+          <li>
+            <a href="about.php" class="hover:text-yellow-200 transition-all">About us</a>
+          </li>
+          <li>
+            <a href="#" class="border-b border-white hover:text-yellow-200 transition-all">Blog</a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="flex gap-10 justify-between items-center">
+        <!-- Cart button -->
+        <div>
+          <button id="cart-button" class="py-2 px-2 rounded-md relative border-white border-3">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shopping-cart fill-white">
+              <circle cx="8" cy="21" r="1" />
+              <circle cx="19" cy="21" r="1" />
+              <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" />
+            </svg>
+            <span id="cart-quantity" class="absolute right-0 top-0 translate-x-1/2 -translate-y-1/2 px-2 py-2 inline-block bg-yellow-100 rounded-full text-sky-950">
+              0
+            </span>
+          </button>
+        </div>
+        <!-- Login button -->
+        <div>
+          <?php if (isset($_SESSION['username'])) : ?>
+            <span class="py-2 px-5 rounded-md border-white border-3">Hi <?php echo $username; ?></span>
+          <?php else : ?>
+            <a href="login.php" class="py-2 px-5 rounded-md border-white border-3">
+              Login
+            </a>
+          <?php endif; ?>
+        </div>
+      </div>
+    </div>
+  </header>
+  <section class="px-8 py-16 max-w-7xl mx-auto">
+    <h1 class="text-5xl text-sky-950 font-bold mb-16">
+      Train Your Dog with Treats and Toys: A Pawsome Guide
+    </h1>
+    <h2 class="text-2xl font-bold text-sky-950 mb-2">Introduction:</h2>
+    <p class="mb-10">
+      Training your dog can be both fun and rewarding, and using treats and
+      interactive toys is an effective way to engage your furry friend while
+      teaching them new behaviors. In this guide, we'll explore how to train
+      your dog using these methods and how you can conveniently purchase
+      everything you need from Pawsome.
+    </p>
+
+    <h2 class="text-2xl font-bold text-sky-950 mb-2">
+      Training with Treats:
+    </h2>
+    <p class="mb-4">
+      Treats are a powerful motivator for dogs and can be used to reinforce
+      positive behaviors during training sessions. When using treats, it's
+      important to choose high-quality, healthy options that your dog loves.
+      Start by selecting a treat that is small, tasty, and easy to consume
+      quickly.
+    </p>
+    <p class="mb-4">
+      Begin by introducing the treat to your dog and rewarding them for
+      performing the desired behavior. For example, if you're teaching your
+      dog to sit, you would lure them into the sitting position with a treat
+      and then reward them with the treat once they are sitting. Be sure to
+      praise your dog enthusiastically each time they successfully complete
+      the behavior.
+    </p>
+    <div class="grid place-items-center">
+      <img src="images/dog-treat.jpg" alt="dog with toy" class="mb-16 w-80" />
+    </div>
+
+    <h2 class="text-2xl font-bold text-sky-950 mb-2">
+      Training with Interactive Toys:
+    </h2>
+    <p class="mb-4">
+      Interactive toys are another excellent tool for training your dog and
+      providing mental stimulation. These toys engage your dog's natural
+      instincts and encourage problem-solving skills while keeping them
+      entertained. Choose toys that are durable, safe, and appropriate for
+      your dog's size and breed.
+    </p>
+    <p class="mb-4">
+      To use interactive toys for training, fill the toy with your dog's
+      favorite treats or kibble and encourage them to interact with it. As
+      your dog plays with the toy, they will be rewarded with treats,
+      reinforcing positive behaviors and keeping them engaged for longer
+      periods.
+    </p>
+    <div class="grid place-items-center">
+      <img src="images/jesper-brouwers.jpg" alt="dog with toy" class="mb-16 w-80" />
+    </div>
+
+    <h2 class="text-2xl font-bold text-sky-950 mb-2">
+      Shopping for Training Supplies on Pawsome:
+    </h2>
+    <p class="mb-4">
+      At Pawsome, we offer a wide range of high-quality treats and interactive
+      toys to make training your dog a breeze. Our selection includes premium
+      treats made from natural ingredients, as well as a variety of engaging
+      toys designed to keep your dog entertained and mentally stimulated.
+    </p>
+    <p class="mb-16">
+      With just a few clicks, you can browse our collection, place your order,
+      and have everything you need delivered right to your doorstep. Whether
+      you're teaching your dog basic commands, practicing obedience training,
+      or simply having fun together, Pawsome has everything you need to make
+      training enjoyable and effective for both you and your furry friend.
+    </p>
+
+    <h2 class="text-2xl font-bold text-sky-950 mb-2">Conclusion:</h2>
+    <p>
+      Training your dog using treats and interactive toys is a fun and
+      rewarding experience that strengthens the bond between you and your pet.
+      By choosing high-quality products from Pawsome, you can ensure that your
+      training sessions are both effective and enjoyable. Start shopping today
+      and unleash your dog's full potential!
+    </p>
+  </section>
+  <footer class="p-16 bg-sky-950 text-white font-bold text-center">
+    <div>
+      <p class="mb-5">Pawsome cares about you</p>
+      <p>For any queries contact us on: +44-7777777777</p>
+    </div>
+  </footer>
+</body>
+
+</html>
