@@ -58,18 +58,19 @@ $conn->close();
 
 <body class="bg-gray-100">
   <div class="container mx-auto px-4 py-8">
-    <h2 class="text-3xl font-semibold text-center mb-4">Welcome, Admin!</h2>
+    <h2 class="text-3xl font-bold text-center mb-4 text-sky-950">Welcome, Admin!</h2>
     <p class="text-center mb-8">This is the admin page.</p>
     <div class="flex justify-center mb-8">
-      <a href="admin_add_user.php" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 mr-4 rounded">Add user</a>
-      <a href="admin_add_product.php" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Add product</a>
+      <a href="admin_add_user.php" class="bg-sky-950 hover:bg-sky-800 text-white font-bold py-2 px-4 mr-4 rounded">Add user</a>
+      <a href="admin_add_product.php" class="bg-sky-950 hover:bg-sky-800 text-white font-bold py-2 px-4 rounded">Add product</a>
     </div>
+    <h2 class="text-center text-3xl font-bold text-sky-950 mb-5">User Table</h2>
     <div class="flex justify-center">
-      <table class="table-auto border border-collapse border-gray-600">
+      <table class="table-auto border border-collapse border-gray-600 mb-10">
         <thead>
           <tr>
-            <th class="px-4 py-2 bg-gray-200 border">Id</th>
-            <th class="px-4 py-2 bg-gray-200 border">Name</th>
+            <th class="px-4 py-2 bg-gray-200 border">User Id</th>
+            <th class="px-4 py-2 bg-gray-200 border">User Name</th>
             <th class="px-4 py-2 bg-gray-200 border">Action</th>
           </tr>
         </thead>
@@ -84,7 +85,8 @@ $conn->close();
         </tbody>
       </table>
     </div>
-    <div class="flex justify-center mt-8">
+    <h2 class="text-center text-3xl font-bold text-sky-950 mb-5">Product Table</h2>
+    <div class="flex justify-center">
       <table class="table-auto border border-collapse border-gray-600">
         <thead>
           <tr>
