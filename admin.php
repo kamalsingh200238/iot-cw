@@ -58,6 +58,8 @@ $conn->close();
 <body>
   <h2>Welcome, Admin!</h2>
   <p>This is the admin page.</p>
+  <a href="admin_add_user.php">Add user</a>
+  <a href="admin_add_product.php">Add product</a>
   <table>
     <thead>
       <tr>
@@ -70,6 +72,7 @@ $conn->close();
         <tr>
           <td><?php echo $user['id']; ?></td>
           <td><?php echo $user['username']; ?></td>
+          <td><a href="admin_delete_user.php?id=<?php echo$user['id']?>">Delete</a></td>
         </tr>
       <?php endforeach; ?>
     </tbody>
@@ -88,6 +91,7 @@ $conn->close();
           <td><?php echo $product['id']; ?></td>
           <td><?php echo $product['name']; ?></td>
           <td><?php echo $product['price']; ?></td>
+          <td><a href="admin_delete_product.php?id=<?php echo$product['id']?>">Delete</a></td>
         </tr>
       <?php endforeach; ?>
     </tbody>

@@ -84,7 +84,7 @@ $conn->close();
             </button>
           </div>
           <div>
-            <a href="./login.html" class="text-blue-500 hover:underline transition-all">Existing user? Login</a>
+            <a href="login.php" class="text-blue-500 hover:underline transition-all">Existing user? Login</a>
           </div>
         </div>
       </form>
