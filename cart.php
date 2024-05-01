@@ -92,7 +92,7 @@ $subtotal = 0;
                             ?>
           <li class="flex py-6 sm:py-10">
             <div class="flex-shrink-0">
-              <img src="https://tailwindui.com/img/ecommerce-images/shopping-cart-page-01-product-01.jpg" alt="Front of men&#039;s Basic Tee in sienna." class="w-24 h-24 rounded-md object-center object-cover sm:w-48 sm:h-48">
+              <img src="<?php echo "images/" . $row[ "id" ] . ".jpg"; ?>" alt="Front of men&#039;s Basic Tee in sienna." class="w-24 h-24 rounded-md object-center object-cover sm:w-48 sm:h-48">
             </div>
 
             <div class="ml-4 flex-1 flex flex-col justify-between">
