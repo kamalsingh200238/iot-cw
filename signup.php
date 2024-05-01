@@ -35,8 +35,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $stmt->bind_param("ss", $username, $hashed_password);
 
             if ($stmt->execute()) {
-                // header("Location: success.html"); // Redirect to a success page or display a success message
-                // exit;
+                header("Location: login.php"); // Redirect to a success page or display a success message
+                exit;
             } else {
                 $errorMessage = "Error: " . $stmt->error;
             }
@@ -56,13 +56,13 @@ $conn->close();
  <meta charset="UTF-8" />
  <meta name="viewport" content="width=device-width, initial-scale=1" />
  <title>Pawsome | Signup</title>
- <link rel="stylesheet" href="./main.css" />
+ <link rel="stylesheet" href="main.css" />
 </head>
 
 <body>
   <main class="">
     <div class="grid grid-cols-2 place-items-center">
-      <img src="./images/dog-sitting.jpg" alt="dog sitting" class="w-full max-h-screen object-cover object-bottom" />
+      <img src="images/dog-sitting.jpg" alt="dog sitting" class="w-full max-h-screen object-cover object-bottom" />
       <form action="signup.php" method="post">
         <div class="w-full px-10 flex flex-col items-center">
           <h1 class="mb-8 text-3xl font-bold text-sky-950">Signup</h1>

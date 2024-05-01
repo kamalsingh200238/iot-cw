@@ -21,7 +21,7 @@ if (!empty($_GET["query"])) {
     );
     $stmt->bind_param("s", $query);
 } else {
-  // If no query is provided, fetch all products
+    // If no query is provided, fetch all products
     $stmt = $conn->prepare("SELECT * FROM products");
 }
 
@@ -40,7 +40,7 @@ $result = $stmt->get_result();
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Pawsome | Store</title>
     <link rel="stylesheet" href="main.css" />
-    <script src="./cart-logic.js" defer></script>
+    <script defer src="cart-logic.js"></script>
 </head>
 <body>
 <header class="font-bold text-white shadow-md bg-sky-950">
@@ -83,13 +83,13 @@ $result = $stmt->get_result();
                 </li>
                 <li>
                     <a
-                        href="./about.html"
+                        href="about.html"
                         class="hover:text-yellow-200 transition-all"
                     >About us</a
                     >
                 </li>
                 <li>
-                    <a href="./blog.html" class="hover:text-yellow-200 transition-all"
+                    <a href="blog.html" class="hover:text-yellow-200 transition-all"
                     >Blog</a
                     >
                 </li>
@@ -128,7 +128,7 @@ $result = $stmt->get_result();
             <!-- Login button -->
             <div>
                 <a
-                    href="./login.html"
+                    href="login.php"
                     class="py-2 px-5 rounded-md border-white border-3"
                 >
                     Login
@@ -214,9 +214,9 @@ $result = $stmt->get_result();
                     </div>
                 </div>
             <?php endwhile;
-            $stmt->close();
-            $conn->close();
-            ?>
+$stmt->close();
+$conn->close();
+?>
         </div>
     </div>
 </section>
