@@ -53,49 +53,60 @@ $conn->close();
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Admin Page</title>
+  <link href="main.css" rel="stylesheet">
 </head>
 
-<body>
-  <h2>Welcome, Admin!</h2>
-  <p>This is the admin page.</p>
-  <a href="admin_add_user.php">Add user</a>
-  <a href="admin_add_product.php">Add product</a>
-  <table>
-    <thead>
-      <tr>
-        <th>Id</th>
-        <th>Name</th>
-      </tr>
-    </thead>
-    <tbody>
-      <?php foreach ($users as $user) : ?>
-        <tr>
-          <td><?php echo $user['id']; ?></td>
-          <td><?php echo $user['username']; ?></td>
-          <td><a href="admin_delete_user.php?id=<?php echo$user['id']?>">Delete</a></td>
-        </tr>
-      <?php endforeach; ?>
-    </tbody>
-  </table>
-  <table>
-    <thead>
-      <tr>
-        <th>Product id</th>
-        <th>Product name</th>
-        <th>Product price</th>
-      </tr>
-    </thead>
-    <tbody>
-      <?php foreach ($products as $product) : ?>
-        <tr>
-          <td><?php echo $product['id']; ?></td>
-          <td><?php echo $product['name']; ?></td>
-          <td><?php echo $product['price']; ?></td>
-          <td><a href="admin_delete_product.php?id=<?php echo$product['id']?>">Delete</a></td>
-        </tr>
-      <?php endforeach; ?>
-    </tbody>
-  </table>
+<body class="bg-gray-100">
+  <div class="container mx-auto px-4 py-8">
+    <h2 class="text-3xl font-semibold text-center mb-4">Welcome, Admin!</h2>
+    <p class="text-center mb-8">This is the admin page.</p>
+    <div class="flex justify-center mb-8">
+      <a href="admin_add_user.php" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 mr-4 rounded">Add user</a>
+      <a href="admin_add_product.php" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Add product</a>
+    </div>
+    <div class="flex justify-center">
+      <table class="table-auto border border-collapse border-gray-600">
+        <thead>
+          <tr>
+            <th class="px-4 py-2 bg-gray-200 border">Id</th>
+            <th class="px-4 py-2 bg-gray-200 border">Name</th>
+            <th class="px-4 py-2 bg-gray-200 border">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <?php foreach ($users as $user) : ?>
+            <tr>
+              <td class="px-4 py-2 border"><?php echo $user['id']; ?></td>
+              <td class="px-4 py-2 border"><?php echo $user['username']; ?></td>
+              <td class="px-4 py-2 border"><a href="admin_delete_user.php?id=<?php echo $user['id'] ?>" class="text-red-500 hover:text-red-700">Delete</a></td>
+            </tr>
+          <?php endforeach; ?>
+        </tbody>
+      </table>
+    </div>
+    <div class="flex justify-center mt-8">
+      <table class="table-auto border border-collapse border-gray-600">
+        <thead>
+          <tr>
+            <th class="px-4 py-2 bg-gray-200 border">Product id</th>
+            <th class="px-4 py-2 bg-gray-200 border">Product name</th>
+            <th class="px-4 py-2 bg-gray-200 border">Product price</th>
+            <th class="px-4 py-2 bg-gray-200 border">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <?php foreach ($products as $product) : ?>
+            <tr>
+              <td class="px-4 py-2 border"><?php echo $product['id']; ?></td>
+              <td class="px-4 py-2 border"><?php echo $product['name']; ?></td>
+              <td class="px-4 py-2 border"><?php echo $product['price']; ?></td>
+              <td class="px-4 py-2 border"><a href="admin_delete_product.php?id=<?php echo $product['id'] ?>" class="text-red-500 hover:text-red-700">Delete</a></td>
+            </tr>
+          <?php endforeach; ?>
+        </tbody>
+      </table>
+    </div>
+  </div>
 </body>
 
 </html>
