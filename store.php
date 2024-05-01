@@ -164,7 +164,7 @@ $result = $stmt->get_result();
             while ($row = $result->fetch_assoc()) : ?>
                 <div class="flex flex-col gap-5 items-stretch p-5 bg-yellow-100 rounded-lg">
                     <img
-                        src="https://cdn.wallpapersafari.com/45/36/E1gFSV.jpg"
+                        src="<?php echo "images/" . $row[ "id" ] . ".jpg"; ?>"
                         alt="white image"
                         class="object-cover w-60 rounded-md aspect-square"
                     />
