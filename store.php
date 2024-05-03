@@ -8,7 +8,7 @@ $dbUsername = "root";
 $dbPassword = "";
 $database = "pawsome";
 
-if ($_SESSION["loggedin"] === true) {
+if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
     $username = $_SESSION['username'];
 }
 
